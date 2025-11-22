@@ -1,4 +1,4 @@
-package io.intersteed.github.blackblock;
+package io.github.intersteed.blackblock;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;

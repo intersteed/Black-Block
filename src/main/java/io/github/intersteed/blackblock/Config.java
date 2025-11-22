@@ -1,4 +1,4 @@
-package io.intersteed.github.blackblock;
+package io.github.intersteed.blackblock;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
