@@ -1,0 +1,13 @@
+{
+  "itemGroup.blackblock": "Example Mod Tab",
+  "block.blackblock.example_block": "Example Block",
+  "item.blackblock.example_item": "Example Item",
+
+  "blackblock.configuration.title": "Black Block Configs",
+  "blackblock.configuration.section.blackblock.common.toml": "Black Block Configs",
+  "blackblock.configuration.section.blackblock.common.toml.title": "Black Block Configs",
+  "blackblock.configuration.items": "Item List",
+  "blackblock.configuration.logDirtBlock": "Log Dirt Block",
+  "blackblock.configuration.magicNumberIntroduction": "Magic Number Text",
+  "blackblock.configuration.magicNumber": "Magic Number"
+}
