@@ -42,42 +42,39 @@ public class BlackBlock {
 
 
     public BlackBlock(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         RegisterBlocks.DR.register(modEventBus);
         RegisterItems.DR.register(modEventBus);
         RegisterCreativeTabs.DR.register(modEventBus);
 
-        // Register the item to a creative tab
-//        modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::addCreative);
+        NeoForge.EVENT_BUS.addListener(this::onServerStarting);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+    /**
+     * This is the handler for the common setup event. I'm
+     * not sure why we would use this.
+     */
     private void commonSetup(FMLCommonSetupEvent event) {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-
-        if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-        }
-
-        LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
-
-        Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
+        LOGGER.info("Ran the Common Set up");
     }
 
-//    // Add the example block item to the building blocks tab
-//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(EXAMPLE_BLOCK_ITEM);
-//        }
-//    }
+    /**
+     * This is where we would register stuff in other creative mode tabs
+     * They recommend that we register our own stuff directly when we
+     * register our tab.
+     */
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        LOGGER.info("Registered our item in another tab");
+    }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
+    /**
+     * This is where we would initialize stuff for the server.
+     */
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
