@@ -14,6 +14,6 @@ public class RegisterBlocks {
 
     private static final DeferredBlock<TheBlackBlock> THE_BLACK_BLOCK = DR.register(TheBlackBlock.REGISTRY_NAME,
             () -> new TheBlackBlock(TheBlackBlock.getBlockProperties()));
-    private static final DeferredItem<BlockItem> THE_BLACK_BLOCK_ITEM = RegisterItems.DR.register(TheBlackBlock.REGISTRY_NAME,
+    public static final DeferredItem<BlockItem> THE_BLACK_BLOCK_ITEM = RegisterItems.DR.register(TheBlackBlock.REGISTRY_NAME,
             () -> new BlockItem(THE_BLACK_BLOCK.get(), TheBlackBlock.getItemProperties()));
 }

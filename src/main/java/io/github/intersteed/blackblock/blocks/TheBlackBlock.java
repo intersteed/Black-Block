@@ -30,7 +30,8 @@ public class TheBlackBlock extends Block {
 
     public static Item.Properties getItemProperties() {
         Item.Properties itemProperties = new Item.Properties()
-                .setId(ResourceKey.create(Registries.ITEM, RESOURCE_ID));
+                .setId(ResourceKey.create(Registries.ITEM, RESOURCE_ID))
+                .overrideDescription(DISPLAY_NAME);
         return itemProperties;
     }
 
