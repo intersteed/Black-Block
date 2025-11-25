@@ -47,6 +47,7 @@ public class BlackBlock {
 
         RegisterBlocks.DR.register(modEventBus);
         RegisterItems.DR.register(modEventBus);
+        LOGGER.info("WE MADE IT PASSED THE REGISTRIES!!!");
 
         // Register the item to a creative tab
 //        modEventBus.addListener(this::addCreative);
