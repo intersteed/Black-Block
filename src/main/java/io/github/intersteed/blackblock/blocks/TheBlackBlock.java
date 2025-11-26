@@ -21,17 +21,13 @@ public class TheBlackBlock extends Block {
 
     public static Properties getBlockProperties() {
         Properties props = Properties.of()
-                .setId(ResourceKey.create(Registries.BLOCK, RESOURCE_ID))
                 .mapColor(MapColor.STONE)
-                .strength(1.0F)
-                .overrideDescription(DISPLAY_NAME);
+                .strength(1.0F);
         return props;
     }
 
     public static Item.Properties getItemProperties() {
-        Item.Properties itemProperties = new Item.Properties()
-                .setId(ResourceKey.create(Registries.ITEM, RESOURCE_ID))
-                .overrideDescription(DISPLAY_NAME);
+        Item.Properties itemProperties = new Item.Properties();
         return itemProperties;
     }
 
