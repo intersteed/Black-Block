@@ -1,0 +1,7 @@
+{
+  "variants" : {
+    "" : {
+      "model" : "blackblock:block/the_black_block"
+    }
+  }
+}
