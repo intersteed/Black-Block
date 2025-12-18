@@ -1,11 +1,16 @@
 package io.github.intersteed.blackblock;
 
+import io.github.intersteed.blackblock.blockentities.RegisterBlockEntityTypes;
+import io.github.intersteed.blackblock.datagen.RegisterProviders;
 import io.github.intersteed.blackblock.items.RegisterItems;
+import net.minecraft.core.component.DataComponentHolder;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.common.extensions.IItemExtension;
 import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
-
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -28,10 +33,12 @@ public class BlackBlock {
         modEventBus.addListener(this::commonSetup);
         RegisterBlocks.DR.register(modEventBus);
         RegisterItems.DR.register(modEventBus);
+        RegisterBlockEntityTypes.DR.register(modEventBus);
         RegisterCreativeTabs.DR.register(modEventBus);
-
         modEventBus.addListener(this::addCreative);
         NeoForge.EVENT_BUS.addListener(this::onServerStarting);
+
+        modEventBus.addListener(RegisterProviders::gatherData);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
