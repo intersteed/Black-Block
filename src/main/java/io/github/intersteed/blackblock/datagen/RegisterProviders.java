@@ -13,9 +13,11 @@ public class RegisterProviders {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         BBLanguageProvider languageProvider = new BBLanguageProvider(output);
         BBBlockStateProvider blockStateProvider = new BBBlockStateProvider(output, existingFileHelper);
+        BBItemModelProvider itemModelProvider = new BBItemModelProvider(output, existingFileHelper);
 
         gen.addProvider(event.includeClient(), languageProvider);
         gen.addProvider(event.includeServer(), blockStateProvider);
+        gen.addProvider(event.includeClient(), itemModelProvider);
     }
 
 }
