@@ -3,6 +3,7 @@ package io.github.intersteed.blackblock;
 import io.github.intersteed.blackblock.blockentities.RegisterBlockEntityTypes;
 import io.github.intersteed.blackblock.datagen.RegisterProviders;
 import io.github.intersteed.blackblock.items.RegisterItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.component.DataComponentHolder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
